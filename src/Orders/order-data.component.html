@@ -1,17 +1,23 @@
 <div class="container">
     <h3>Order Details</h3>
     <p></p>
-    <strong>Order Number:</strong>
+    <strong>Order Number: {{OrderNumber}}</strong>
     <p></p>
+    <div id="info">
     <ngb-tabset>
-        <ngb-tab title="Order Summary">
+        <ngb-tab title="Summary">
           <ng-template ngbTabContent>
-              <span class="sectionTitle">Order Summary</span>
+            <div id="summary" class="data">  
+            <span class="sectionTitle">Order Summary</span>
               <p></p>
-              Order Date: <br/>    
+              Order Date: <br/> 
+              Order Type: <br/>
+              PO Number: <br/> 
+              Total Cost: <br/>  
+              </div>
           </ng-template>
         </ngb-tab>
-        <ngb-tab title="Billing Information">
+        <ngb-tab title="Billing">
           <ng-template ngbTabContent>
               <div id="billing" class="data">
                   <span class="sectionTitle">Billing Information</span>
@@ -20,10 +26,10 @@
                   Billing Customer<br/>
                   Address 1<br/>
                   City, State, Zip<br/>
-                </div>
+                  </div>
           </ng-template>
         </ngb-tab>
-        <ngb-tab title="Customer Information">
+        <ngb-tab title="Customer">
           <ng-template ngbTabContent>
               <div id="customer" class="data">
                   <span class="sectionTitle">Customer Information</span>
@@ -34,30 +40,38 @@
                 </div>
           </ng-template>
         </ngb-tab>
-        <ngb-tab title="Salesperson Information">
+        <ngb-tab title="Salesperson">
           <ng-template ngbTabContent>
             <div id="salesperson" class="data">
               <span class="sectionTitle">Salesperson Information</span>
               <p></p>
-              Salesperson Id:
-              Salesperson Commission: 
+              Salesperson Id:<br/>
+              Salesperson Commission:<br/> 
+              Percent Commission:<br/>
             </div>
           </ng-template>
         </ngb-tab>
       </ngb-tabset>
+      </div>
+      <div class="spacer"></div>
+      <div id="details">
       <ngb-tabset>
-      <ngb-tab title="Details">
+      <ngb-tab title="Tax">
         <ng-template ngbTabContent>
           <div id="details" class="data">
-            <span class="title">Details</span>
-
+            <span class="sectionTitle">Tax Details</span>
+            <p></p>
+            Tax Percent: <br/>
+            Total Taxable Amount: <br/>
+            Total Taxable Cost: <br/>
           </div>
         </ng-template>
       </ngb-tab>
-      <ngb-tab title="Shipping Details">
+      <div style="float:left"></div>
+      <ngb-tab title="Shipping">
           <ng-template ngbTabContent>
             <div id="details" class="data">
-              <span class="title">Shipping Details</span>
+              <span class="sectionTitle">Shipping Details</span>
               <p></p>
               <p>Billing Customer #</p>
               Ship To<br/>
@@ -69,18 +83,20 @@
             </div>
           </ng-template>
         </ngb-tab>
-        <ngb-tab title="Freight Information">
+        <ngb-tab title="Freight">
             <ng-template ngbTabContent>
               <div id="details" class="data">
-                <span class="title">Freight Information</span>
-                
+                <span class="sectionTitle">Freight Information</span>
+                <p></p>
+                Freight Amount: <br/>
+                Freight Pay Code: <br/>
               </div>
             </ng-template>
           </ngb-tab>
         </ngb-tabset>
-
+</div>
     
-    <div>Comments</div>
+    <div id="comments">Comments</div>
     
     </div>
     

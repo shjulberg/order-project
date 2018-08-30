@@ -1,4 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.min.css";
-.sectionTitle {color:blue}
+.sectionTitle {font-weight: bold; color:blue}
 .spacer{height:50px}
+.data {text-align: left}
+.comment:nth-child(even){background: lightgray}
+.comment{text-align: left}
+ul.comments{list-style: none; padding-left: 0}

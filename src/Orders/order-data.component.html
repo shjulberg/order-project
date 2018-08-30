@@ -1,11 +1,11 @@
 <div class="container">
   <h3>Order Details</h3>
   <p></p>
-  <strong>Order Number: {{orderNumber}}</strong>
+  <strong class="sectionTitle">Order Number: {{orderNumber}}</strong>
   <p></p>
   <div id="info">
     <ngb-tabset>
-      <ngb-tab title="Summary">
+      <ngb-tab title="Summary" id="summaryTab">
         <ng-template ngbTabContent>
           <div id="summary" class="data">
             <span class="sectionTitle">Order Summary</span>
@@ -15,7 +15,7 @@
           </div>
         </ng-template>
       </ngb-tab>
-      <ngb-tab title="Billing">
+      <ngb-tab title="Billing" id="billingTab">
         <ng-template ngbTabContent>
           <div id="billing" class="data">
             <span class="sectionTitle">Billing Information</span>
@@ -28,7 +28,7 @@
           </div>
         </ng-template>
       </ngb-tab>
-      <ngb-tab title="Customer">
+      <ngb-tab title="Customer" id="customerTab">
         <ng-template ngbTabContent>
           <div id="customer" class="data">
             <span class="sectionTitle">Customer Information</span>
@@ -37,7 +37,7 @@
           </div>
         </ng-template>
       </ngb-tab>
-      <ngb-tab title="Salesperson">
+      <ngb-tab title="Salesperson" id="salespersonTab">
         <ng-template ngbTabContent>
           <div id="salesperson" class="data">
             <span class="sectionTitle">Salesperson Information</span>
@@ -52,7 +52,7 @@
   <div class="spacer"></div>
   <div id="details">
     <ngb-tabset>
-      <ngb-tab title="Tax">
+      <ngb-tab title="Tax" id="taxTab">
         <ng-template ngbTabContent>
           <div id="details" class="data">
             <span class="sectionTitle">Tax Details</span>
@@ -63,7 +63,7 @@
         </ng-template>
       </ngb-tab>
       <div style="float:left"></div>
-      <ngb-tab title="Shipping">
+      <ngb-tab title="Shipping" id="shippingTab">
         <ng-template ngbTabContent>
           <div id="details" class="data">
             <span class="sectionTitle">Shipping Details</span>
@@ -76,7 +76,7 @@
           </div>
         </ng-template>
       </ngb-tab>
-      <ngb-tab title="Freight">
+      <ngb-tab title="Freight" id="freightTab">
         <ng-template ngbTabContent>
           <div id="details" class="data">
             <span class="sectionTitle">Freight Information</span>

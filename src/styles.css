@@ -2,8 +2,7 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 .sectionTitle {font-weight: bold; color:#FAECBD}
 .spacer{height:50px}
-ngb-tabset {border: none}
-.nav-tabs{border-bottom-color: #000000}
+body{background-color: #447EA6; color: white}
 .data {
     text-align: left;
     box-shadow: inset 0 0 10px #000000;
@@ -11,11 +10,10 @@ ngb-tabset {border: none}
     padding-top: 20px;
     padding-bottom: 20px;
 }
-.comment:nth-child(even){background: lightgray}
-.comment{text-align: left}
-ul.comments{list-style: none; padding-left: 0}
-.nav-link{color: black}
-body{background-color: #447EA6; color: white}
+/*tab styles*/
+ngb-tabset {border: none}
+.nav-tabs{border-bottom-color: #000000}
+.nav-link{color: black} 
 #summaryTab{background-color: #847E3F}
 #billingTab{background-color: #5E95B3}
 #customerTab{background-color: #D4A57F}
@@ -24,3 +22,7 @@ body{background-color: #447EA6; color: white}
 #shippingTab{background-color: #5E95B3}
 #freightTab{background-color: #D4A57F}
 .nav-link.active{font-weight: bold;border-color: #000000 !important}
+/* comments section styles */
+.comment:nth-child(even){background: lightgray}
+.comment{text-align: left}
+ul.comments{list-style: none; padding-left: 0}

@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { OrderDataComponent } from '../Orders/order-data.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from './home/home.component';
+import { LineItemComponent } from '../Orders/line-item.component';
 
 @NgModule({
   declarations: [
 
     AppComponent,
     OrderDataComponent,
+    LineItemComponent,
     HomeComponent
   ],
   imports: [
@@ -21,6 +23,7 @@ import { HomeComponent } from './home/home.component';
     HttpClientModule,
     RouterModule.forRoot([
       {path: 'orderData', component: OrderDataComponent},
+      {path: 'orderLineItem', component: LineItemComponent},
       {path: 'home', component: HomeComponent},
       {path: '', redirectTo: 'home', pathMatch: 'full'},
       {path: '**', redirectTo: 'home', pathMatch: 'full'}

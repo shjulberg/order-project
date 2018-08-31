@@ -1,0 +1,31 @@
+<div class="container">
+    <h3>Line Item Details</h3>
+    <p></p>
+    <div id="info" *ngIf="lineItemData">
+        <strong class="sectionTitle">Line Item: {{lineItemData.ItemNumber}}</strong><br/> Type:&nbsp;
+        <span class="lineItemData">{{lineItemData.LineType}}</span>
+        <p></p>
+
+        Customer Number: &nbsp;<span class="lineItemData">{{lineItemData.CustomerNumber}}</span><br/>
+        <p></p>
+        Original Price: &nbsp;<span class="lineItemData">{{lineItemData.OriginalPrice | currency}}</span><br/>
+        Extended Price: &nbsp;<span class="lineItemData">{{lineItemData.ExtendedPrice | currency}}</span>
+        <p></p>
+        Item Description: <br/>
+        <span class="lineItemData">
+            {{lineItemData.ItemDescription1}}<br/> {{lineItemData.ItemDescription2}}
+        </span><p></p>
+        Location: &nbsp;<span class="lineItemData">{{lineItemData.Location}}</span>
+        <p></p>
+        Quantity: &nbsp;<span class="lineItemData">{{lineItemData.QuantityOrdered}}&nbsp;{{lineItemData.UnitOfMeasure}}</span><br/>        Quantity
+        on backorder: &nbsp;<span class="lineItemData">{{lineItemData.QuantityBackordered}}</span>
+        <p></p>
+        Request Date: &nbsp;<span class="lineItemData">{{lineItemData.RequestDate | date: "MM/dd/yyyy"}}</span><br/> Required
+        Date: &nbsp;<span class="lineItemData">{{lineItemData.RequiredShipDate | date: "MM/dd/yyyy"}}</span><br/> Promise
+        Date: &nbsp;<span class="lineItemData">{{lineItemData.PromiseDate | date: "MM/dd/yyyy"}}</span><br/>
+        <p></p>
+        Comments:<br/> {{lineItemData.CustomerOrderLineComments}}
+
+
+    </div>
+</div>

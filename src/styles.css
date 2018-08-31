@@ -10,6 +10,8 @@ body{background-color: #447EA6; color: white}
     padding-top: 20px;
     padding-bottom: 20px;
 }
+/*menu*/
+.navbar-brand  {color:#FAECBD}
 /*tab styles*/
 ngb-tabset {border: none}
 .nav-tabs{border-bottom-color: #000000}
@@ -26,3 +28,5 @@ ngb-tabset {border: none}
 .comment:nth-child(even){background: lightgray}
 .comment{text-align: left}
 ul.comments{list-style: none; padding-left: 0}
+/*lineItem details*/
+.lineItemData{color:#FBEEC1}

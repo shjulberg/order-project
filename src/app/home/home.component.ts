@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.welcomeMessage = 'Angular Order Demo';
+    this.welcomeMessage = 'Welcome';
   }
 
 }

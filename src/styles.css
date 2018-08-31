@@ -11,11 +11,12 @@ body{background-color: #447EA6; color: white}
     padding-bottom: 20px;
 }
 /*menu*/
+nav {background-color: #000000}
 .navbar-brand  {color:#FAECBD}
 /*tab styles*/
 ngb-tabset {border: none}
 .nav-tabs{border-bottom-color: #000000}
-.nav-link{color: black} 
+.nav-link{color: white}
 #summaryTab{background-color: #847E3F}
 #billingTab{background-color: #5E95B3}
 #customerTab{background-color: #D4A57F}
@@ -25,8 +26,11 @@ ngb-tabset {border: none}
 #freightTab{background-color: #D4A57F}
 .nav-link.active{font-weight: bold;border-color: #000000 !important}
 /* comments section styles */
-.comment:nth-child(even){background: lightgray}
-.comment{text-align: left}
+.comment:nth-child(even){background:#659DBD}
+.comment{
+    text-align: left; 
+    margin-right:20px;
+}
 ul.comments{list-style: none; padding-left: 0}
 /*lineItem details*/
 .lineItemData{color:#FBEEC1}

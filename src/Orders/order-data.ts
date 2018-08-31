@@ -142,3 +142,21 @@ export interface IFreightPayCodeLiteral {
 export interface IMetadata{
 
 }
+
+export class CommentObj implements ICustomerOrderComment{
+    Comment: string;
+    CommentType: string;
+    Extra10: number;
+    Extra11: number;
+    Extra12: number;
+    Extra13: number;
+    Extra14: number;
+    Extra15: number;
+    ID: number;
+    LevelNumber: string;
+    LineSequenceNumber: number;
+    OrderNumber: string;
+    OrderType: string;
+    RowVersion: string;
+    SequenceNumber: number; 
+  }

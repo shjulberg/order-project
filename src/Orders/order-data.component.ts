@@ -1,6 +1,6 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { OrderDataService } from "./order-data.service";
-import { IOrderDataObject, IData, ICustomerOrderComment, IFreightPayCodeLiteral } from "./order-data";
+import { IOrderDataObject, IData, ICustomerOrderComment, IFreightPayCodeLiteral, CommentObj } from "./order-data";
 @Component({
     templateUrl: './order-data.component.html',
     styleUrls: ['./order-data.component.css']
@@ -11,7 +11,6 @@ export class OrderDataComponent implements OnInit{
   data: IData;
   errorMessage: string;
   pageTitle: string = 'Order Detail';
-
   freightCode: string;
 
   constructor(private orderService: OrderDataService){
@@ -40,5 +39,15 @@ export class OrderDataComponent implements OnInit{
     let value = "";
     let index = FreightCodes.map(function(i) {return i.Key}).indexOf(Key);
     return FreightCodes[index].Value;
+  }
+
+  addComment(comment: string){
+    var newComment = new CommentObj();
+    let numComments = this.orderData.data.CustomerOrderComments.length;
+    newComment.OrderNumber = this.orderData.data.OrderNumber;
+    newComment.CommentType = "L";
+    newComment.ID = this.orderData.data.CustomerOrderComments[numComments-1].ID + 1;
+    newComment.Comment = comment;
+    this.orderData.data.CustomerOrderComments.push(newComment);
   }
 }

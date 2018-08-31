@@ -8,6 +8,7 @@ import { OrderDataComponent } from '../Orders/order-data.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from './home/home.component';
 import { LineItemComponent } from '../Orders/line-item.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { LineItemComponent } from '../Orders/line-item.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     NgbModule,
     HttpClientModule,
     RouterModule.forRoot([

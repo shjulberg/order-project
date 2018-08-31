@@ -49,21 +49,21 @@
             <p></p>
             Salesperson Id: &nbsp;{{data.SalespersonNumber}}<br/> 
             Salesperson Commission: &nbsp; {{data.SalespersonCommissionAmount | currency}}<br/>            Percent
-            Commission: &nbsp; {{data.SalespersonPercentCommission}}<span *ngIf="salesPersonCommissionPct">%</span><br/>
+            Commission: &nbsp; {{data.SalespersonPercentCommission}}<span *ngIf="data.SalespersonPercentCommission">%</span><br/>
           </div>
         </ng-template>
       </ngb-tab>
     </ngb-tabset>
   </div>
   <div class="spacer"></div>
-  <div id="details">
+  <div id="details" *ngIf="data">
     <ngb-tabset>
       <ngb-tab title="Tax" id="taxTab">
         <ng-template ngbTabContent>
           <div id="details" class="data">
             <span class="sectionTitle">Tax Details</span>
             <p></p>
-            Tax Percent: &nbsp;{{data.TaxPercent}}<span *ngIf="taxPct">%</span><br/> 
+            Tax Percent: &nbsp;{{data.TaxPercent}}<span *ngIf="data.TaxPercent">%</span><br/> 
             Total Taxable Amount: &nbsp;{{data.TotalTaxableAmount | currency}}<br/> 
             Total Taxable Cost: &nbsp;{{data.TotalTaxableCost | currency}}<br/>
           </div>
@@ -101,6 +101,7 @@
           {{comment.Comment}}
         </li>
       </ul>
+      <input type="text" id="newComment" #newComment/><button class="btn btn-info" (click)='addComment(newComment.value);newComment.value=""'>Add</button>
     </div>
   </div>
 </div>

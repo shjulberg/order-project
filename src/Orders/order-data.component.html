@@ -1,17 +1,20 @@
 <div class="container">
   <h3>Order Details</h3>
   <p></p>
-  <strong class="sectionTitle">Order Number: {{orderNumber}}</strong>
-  <p></p>
-  <div id="info">
+  <div id="info" *ngIf="data">
+    <strong class="sectionTitle">Order Number: {{data.OrderNumber}}</strong>
+    <p></p>
+
     <ngb-tabset>
       <ngb-tab title="Summary" id="summaryTab">
         <ng-template ngbTabContent>
           <div id="summary" class="data">
             <span class="sectionTitle">Order Summary</span>
             <p></p>
-            Order Date: &nbsp;{{orderDate | date: "MM/dd/yyyy: h:mma"}}<br/> Order Type: &nbsp;<br/> PO Number: &nbsp;{{poNumber}}<br/>            Total
-            Cost: &nbsp;{{totalCost | currency}}<br/>
+            Order Date: &nbsp;{{data.OrderDate | date: "MM/dd/yyyy: h:mma"}}<br/>
+            Order Type: &nbsp;{{data.OrderType}}<br/> 
+            PO Number: &nbsp;{{data.PurchaseOrderNumber}}<br/>
+            Total Cost: &nbsp;{{data.TotalCost | currency}}<br/>
           </div>
         </ng-template>
       </ngb-tab>
@@ -20,10 +23,10 @@
           <div id="billing" class="data">
             <span class="sectionTitle">Billing Information</span>
             <p></p>
-            <p>Billing Customer #: &nbsp;{{billingCustNumber}}</p>
+            <p>Billing Customer #: &nbsp;{{data.BillToCustomerNumber}}</p>
             <p>
-              {{billingCustomer}}<br/> {{billingAddress1}}
-              <br/> {{billingCity}}, {{billingState}}, {{billingZip}}
+              {{data.BillToCustomerName}}<br/> {{data.BillToAddressLine1}}
+              <br/> {{data.BillToCity}}, {{data.BillToState}}, {{data.BillToZip}}
             </p>
           </div>
         </ng-template>
@@ -33,7 +36,9 @@
           <div id="customer" class="data">
             <span class="sectionTitle">Customer Information</span>
             <p></p>
-            {{contactName}}<br/> Email: &nbsp;{{contactEmail}}<br/> Phone: &nbsp;{{contactPhone}}<br/>
+            {{data.ContactName}}<br/> 
+            Email: &nbsp;{{data.ContactEmailAddress}}<br/> 
+            Phone: &nbsp;{{data.ContactPhoneNumber}}<br/>
           </div>
         </ng-template>
       </ngb-tab>
@@ -42,8 +47,9 @@
           <div id="salesperson" class="data">
             <span class="sectionTitle">Salesperson Information</span>
             <p></p>
-            Salesperson Id: &nbsp;{{salesPersonID}}<br/> Salesperson Commission: &nbsp; {{salesPersonCommissionAmt | currency}}<br/>            Percent
-            Commission: &nbsp; {{salesPersonCommissionPct}}<span *ngIf="salesPersonCommissionPct">%</span><br/>
+            Salesperson Id: &nbsp;{{data.SalespersonNumber}}<br/> 
+            Salesperson Commission: &nbsp; {{data.SalespersonCommissionAmount | currency}}<br/>            Percent
+            Commission: &nbsp; {{data.SalespersonPercentCommission}}<span *ngIf="salesPersonCommissionPct">%</span><br/>
           </div>
         </ng-template>
       </ngb-tab>
@@ -57,8 +63,9 @@
           <div id="details" class="data">
             <span class="sectionTitle">Tax Details</span>
             <p></p>
-            Tax Percent: &nbsp;{{taxPct}}<span *ngIf="taxPct">%</span><br/> Total Taxable Amount: &nbsp;{{totalTaxableAmt
-            | currency}}<br/> Total Taxable Cost: &nbsp;{{totalTaxableCost | currency}}<br/>
+            Tax Percent: &nbsp;{{data.TaxPercent}}<span *ngIf="taxPct">%</span><br/> 
+            Total Taxable Amount: &nbsp;{{data.TotalTaxableAmount | currency}}<br/> 
+            Total Taxable Cost: &nbsp;{{data.TotalTaxableCost | currency}}<br/>
           </div>
         </ng-template>
       </ngb-tab>
@@ -68,11 +75,11 @@
           <div id="details" class="data">
             <span class="sectionTitle">Shipping Details</span>
             <p></p>
-            {{shippingCust}}<br/>
-             {{shippingAddress1}}<br/>
-            {{shippingCity}}, {{shippingState}} {{shippingZip}}<br/>
+            {{data.ShipToName}}<br/> 
+            {{data.ShipToAddressLine1}} <br/> 
+            {{data.ShipToCity}}, {{data.ShipToState}} {{data.ShipToZip}}<br/>
             <p></p>
-            Ship via: &nbsp;{{shippingVia}}<br/> Shipping Weight: {{shippingWeight}}<br/>
+            Ship via: &nbsp;{{data.ShipViaCode}}<br/> Shipping Weight: {{data.TotalWeight}}<br/>
           </div>
         </ng-template>
       </ngb-tab>
@@ -81,7 +88,7 @@
           <div id="details" class="data">
             <span class="sectionTitle">Freight Information</span>
             <p></p>
-            Freight Amount: &nbsp;{{freightAmt | currency}}<br/>
+            Freight Amount: &nbsp;{{data.FreightAmount | currency}}<br/> 
             Freight Pay Code: &nbsp;{{freightCode}}<br/>
           </div>
         </ng-template>
@@ -90,8 +97,8 @@
     <p></p>
     <div id="comments" class="data"><span class="sectionTitle">Comments</span>
       <ul class="comments">
-        <li *ngFor="let comment of comments; let i = index" id={{i}} class="comment">
-         {{comment.Comment}}
+        <li *ngFor="let comment of data.CustomerOrderComments; let i = index" id={{i}} class="comment">
+          {{comment.Comment}}
         </li>
       </ul>
     </div>
